@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         out=findViewById(R.id.showText);
-        inp1=findViewById(R.id.inpText);
-        inp2=findViewById(R.id.inpText2);
+        //inp1=findViewById(R.id.inpText);
+        //inp2=findViewById(R.id.inpText2);
 
 
         Button  btn=findViewById(R.id.btn1);

@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">温度转换器</string>
+    <string name="app_name">记分器</string>
     <string name="action_settings">Settings</string>
-    <string name="hello">请输入摄氏温度</string>
-    <string name="btn_label2">转换</string>
-    <string name="textview">华氏温度为:</string>
+    <string name="hello">0</string>
+    <string name="btn_label2">+2 POINTS</string>
+    <string name="btn_label1">+1 POINTS</string>
+    <string name="btn_label3">+3 POINTS</string>
+    <string name="btn_label4">RESET</string>
+    <string name="textview">TeamA</string>
+    <string name="textviewb">TeamB</string>
 </resources>
