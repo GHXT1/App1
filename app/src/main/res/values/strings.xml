@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">记分器</string>
+    <string name="app_name">answer:</string>
     <string name="action_settings">Settings</string>
     <string name="hello">0</string>
     <string name="btn_label2">+2 POINTS</string>
@@ -8,4 +8,8 @@
     <string name="btn_label4">RESET</string>
     <string name="textview">TeamA</string>
     <string name="textviewb">TeamB</string>
+    <string name="btn_dollar_label">Dollar</string>
+    <string name="rmb_hint">input RMB</string>
+    <string name="btn_euro_label">Euro</string>
+    <string name="btn_won_label">Won</string>
 </resources>
