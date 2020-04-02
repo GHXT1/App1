@@ -45,6 +45,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
+        android:layout_marginBottom="30dp"
         android:text="@string/btn_won_label" />
+
+    <Button
+        android:id="@+id/btn_opencfg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openOne"
+        android:text="@string/btn_opencfg_label" />
 
 </LinearLayout>
