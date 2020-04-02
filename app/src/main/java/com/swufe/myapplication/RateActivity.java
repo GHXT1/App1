@@ -34,7 +34,6 @@ public class RateActivity extends AppCompatActivity {
         Log.i(TAG,"onClick:");
         String str = rmb.getText().toString();
         float r = 0;
-        float val = 0;
         if (str.length() > 0) {
             r = Float.parseFloat(str);
         } else {

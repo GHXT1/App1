@@ -57,7 +57,7 @@ public class ConfigActivity extends AppCompatActivity {
         bdl.putFloat("eurokey",newEuro);
         bdl.putFloat("wonkey",newWon);
         intent.putExtras(bdl);
-        //setResult(1,intent);requestCode和resultCode可以一样
+        //setResult(1,intent);requestCode和resultCode可以一样de
         setResult(2,intent);
         //返回到调用页面
         finish();

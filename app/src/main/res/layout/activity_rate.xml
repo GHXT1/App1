@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="29dp"
         android:text="@string/btn_won_label" />
 
     <Button
