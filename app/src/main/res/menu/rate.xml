@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-
         android:id="@+id/menu_set"
         android:title="@string/menu_set_label" />
+
+    <item
+        android:id="@+id/open_list"
+        android:title="@string/label_open_list" />
 </menu>
