@@ -203,7 +203,7 @@ public class RateActivity<timerTask> extends AppCompatActivity implements Runnab
         @Override
         public void run() {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -216,11 +216,7 @@ public class RateActivity<timerTask> extends AppCompatActivity implements Runnab
         }*/
 
             //bundle中保存所获取的汇率
-            //获取Msg对象，用于返回主线程；
-            Message msg=handler.obtainMessage(5);
-            //msg.obj="hello from run()";
-            msg.obj = bundle;
-            handler.sendMessage(msg);
+
             //获取网络数据
       /*URL url= null;
       try {
@@ -243,35 +239,45 @@ public class RateActivity<timerTask> extends AppCompatActivity implements Runnab
         Document doc = null;
         try {
             doc = Jsoup.connect("http://www.usd-cny.com/bankofchina.htm").get();
-        Log.i(TAG, "run:  " + doc.title());
-        Elements tables = doc.getElementsByTag("table");
+            Log.i(TAG, "run:  " + doc.title());
+            Elements tds = doc.getElementsByTag("td");
     /*for (Element table : tables) {
         Log.i(TAG, "run:table[" + i + "]=" + table);
         i++;
     }*/
-        Element table6 = tables.get(5);
-        //Log.i(TAG, "run:table6=" + table6);
-        //获取TD中的数据
-        Elements tds = table6.getElementsByTag("td");
-        for(int i=0;i<tds.size();i+=8){
-            Element td1=tds.get(i);
-            Element td2=tds.get(i+5);
-            Log.i(TAG, "run:"+td1.text()+"==>"+td2.text());
-            String str=td1.text();
-            String val=td2.text();
+            //Log.i(TAG, "run:table6=" + table6);
+            //获取TD中的数据
+            Element td1, td2;
+            for (int i = 0; i < tds.size(); i += 6) {
+                td1 = tds.get(i);//货币名字
+                td2 = tds.get(i + 5);//对应的汇率
+                Log.i(TAG, "run:" + td1.text() + "==>" + td2.text());
+                String str = td1.text();
+                String val = td2.text();
 
 
-            if("美元".equals(str)){
-                bundle.putFloat("dollar-rate",100f/Float.parseFloat(val));
-            }else if("韩国元".equals(str)){
-                bundle.putFloat("won-rate",100f/Float.parseFloat(val));
-            }else if("欧元".equals(str)){
-                bundle.putFloat("euro-rate",100f/Float.parseFloat(val));
+                try {
+                    if ("美元".equals(str)) {
+                        bundle.putFloat("dollar-rate", 100f / Float.parseFloat(val));
+                    } else if ("韩国元".equals(str)) {
+                        bundle.putFloat("won-rate", 100f / Float.parseFloat(val));
+                    } else if ("欧元".equals(str)) {
+                        bundle.putFloat("euro-rate", 100f / Float.parseFloat(val));
+                    }
+
+
+                } catch (Exception ee) {
+                    Log.i(TAG, "getFromUsdCny: run:网页已改变，请修改网页源代码");
+                }
             }
-        }
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
         }
+        //获取Msg对象，用于返回主线程；
+        Message msg=handler.obtainMessage(5);
+        //msg.obj="hello from run()";
+        msg.obj = bundle;
+        handler.sendMessage(msg);
         return bundle;
     }
 
