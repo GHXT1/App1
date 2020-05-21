@@ -78,7 +78,7 @@ public class RateListActivity extends ListActivity implements Runnable{
             Log.i(TAG, "run: 日期不相等，从网络中获取数据");
             Document doc = null;
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
                 doc = Jsoup.connect("http://www.boc.cn/sourcedb/whpj/").get();
                 Log.i(TAG, "run:  " + doc.title());
                 Elements tables = doc.getElementsByTag("table");
